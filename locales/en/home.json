@@ -1,0 +1,20 @@
+{
+    "appTitle": "Savings Calculator",
+    "startingAmount": "Starting amount",
+    "investmentPerMonth": "Investment per month",
+    "timePeriod": "Time period",
+    "expectedReturn": "Expected return rate",
+    "poweredBy": "Powered By ",
+    "totalInvestedAmount": "Total invested amount",
+    "totalInvested": "Total invested",
+    "estReturns": "Est. returns",
+    "totalValue": "Total value",
+    "currentLang": "English",
+    "dialogTitle": "Change language & currency",
+    "dialogSave": "Save",
+    "dialogCancel": "Cancel",
+    "language": "Change language",
+    "currency": "Change currency",
+    "years": "Years"
+  }
+  
