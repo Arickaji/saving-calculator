@@ -3,34 +3,45 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Grid, Input, Slider, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useStore } from '../useStore';
 
 const StyledInput = styled(Input)`
   width: 100px;
   padding: 0;
 `;
 
-export default function SliderSizes({min = 0,max = 100,step = 1,label,endAdornment,fieldName,defaultValue}) {
-  const [value, setValue] = React.useState(defaultValue);
+export default function SliderSizes({min = 0,max = 100,step = 1,label,endAdornment,fieldName}) {
+  
+  // const [value, setValue] = React.useState(defaultValue);
+  const setValue = useStore(React.useCallback((state) => state.setStoreValue, []));
+  const value = useStore(React.useCallback((state) => state[fieldName], [fieldName]));
 
+  // console.log(value);
 
   const handleInputChange = (event) =>{
     setValue(event.target.value === '' ? '' : Number(event.target.value));
   }
   
   
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
+  const handleBlur = React.useCallback(() => {
+    if (value < min) {
+      setValue(fieldName, min);
+    } else if (value > max) {
+      setValue(fieldName, max);
     }
-  };
+  }, [value, min, max, setValue, fieldName]);
   
-  const handleSliderChange = (event , newValues) =>{
-    setValue(newValues);
-  }
-  
+  // const handleSliderChange = (event , newValues) =>{
+  //   setValue(newValues);
+  // }
 
+  const handleSliderChange = React.useCallback(
+    (_, newValue) => {
+      setValue(fieldName, newValue);
+    },
+    [fieldName, setValue],
+  );
+  
 
   return (
     <Box paddingTop={3}>

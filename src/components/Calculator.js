@@ -3,6 +3,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid';
 import SliderInput from './SliderInput'
 import PieChart from './PieChart';
+import Result from './Result';
 
 
 function Calculator() {
@@ -23,7 +24,7 @@ function Calculator() {
                   label='Expected return rate'
                   max={100}
                   step={1}
-                  fieldName="ExpectedReturnRate"
+                  fieldName="expectedReturn"
                   endAdornment='%'
                   defaultValue={12}
                 />
@@ -40,6 +41,7 @@ function Calculator() {
                 <PieChart/>
             </Grid>
         </Grid>
+        <Result/>
       </Container>
   )
 }
