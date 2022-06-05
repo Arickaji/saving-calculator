@@ -10,6 +10,7 @@ const StyledInput = styled(Input)`
   padding: 0;
 `;
 
+
 export default function SliderSizes({min = 0,max = 100,step = 1,label,endAdornment,fieldName}) {
   
   // const [value, setValue] = React.useState(defaultValue);
@@ -77,6 +78,7 @@ export default function SliderSizes({min = 0,max = 100,step = 1,label,endAdornme
               max={max}
               step={step}
               value={value}
+              style={{ color: "#8bc34a" }}
             />
           </Grid>
         </Grid>

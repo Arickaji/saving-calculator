@@ -3,9 +3,10 @@ import { Grid, Typography, useTheme } from '@mui/material';
 import { PieChart as PChart } from 'react-minimal-pie-chart';
 import { Box } from '@mui/system';
 import useTranslation from 'next-translate/useTranslation';
+import { useCalculateGain } from '../hooks/useCalculateGain';
 
 function PieChart() {
-    const { t } = useTranslation('home');
+    const { totalInvestment, wealthGained } = useCalculateGain();
     const theme = useTheme();
     return (
     <>
@@ -14,13 +15,13 @@ function PieChart() {
           <Box sx={{ width: 20, height: 10, backgroundColor: theme.palette.info.main }} />
         </Grid>
         <Grid item mr={1}>
-          <Typography variant="subtitle2">{t('totalInvested')}</Typography>
+          <Typography variant="subtitle2">Total Invested</Typography>
         </Grid>
         <Grid item mr={1}>
-          <Box sx={{ width: 20, height: 10, backgroundColor: theme.palette.primary.main }} />
+          <Box sx={{ width: 20, height: 10, backgroundColor: "#8bc34a"}} />
         </Grid>
         <Grid item>
-          <Typography variant="subtitle2">{t('estReturns')}</Typography>
+          <Typography variant="subtitle2">Est. Return</Typography>
         </Grid>
       </Grid>
       <PChart
@@ -28,8 +29,8 @@ function PieChart() {
         lineWidth={35}
         paddingAngle={5}
         data={[
-          { title: t('totalInvested'), value: 10, color: theme.palette.primary.main   },
-          { title: t('estReturns'), value: 20, color: "#8bc34a"},
+          { title: "Total Invested", value: totalInvestment, color: theme.palette.primary.main    },
+          { title: "Est. Return", value: wealthGained, color: "#8bc34a"},
         ]}
       />
     </>

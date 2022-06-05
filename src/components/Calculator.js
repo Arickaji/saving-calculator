@@ -21,6 +21,13 @@ function Calculator() {
                   defaultValue={100000}
                 />
                 <SliderInput
+                  label={'Invest Per Month'}
+                  endAdornment={'₹'}
+                  max={100000}
+                  step={500}
+                  fieldName="investedAmount"
+                />
+                <SliderInput
                   label='Expected return rate'
                   max={100}
                   step={1}
