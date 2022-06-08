@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import SliderInput from './SliderInput'
 import PieChart from './PieChart';
 import Result from './Result';
+import { Copyright } from './CopyRights';
 
 
 function Calculator() {
@@ -49,6 +50,7 @@ function Calculator() {
             </Grid>
         </Grid>
         <Result/>
+        <Copyright/>
       </Container>
   )
 }
