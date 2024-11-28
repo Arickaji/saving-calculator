@@ -46,7 +46,7 @@ Welcome to the **Saving Calculator** repository! This project is a web-based app
 ## 👨‍💻 Author
 
 - **Aric Kaji**  
-  [GitHub](https://github.com/Arickaji) | [LinkedIn](https://www.linkedin.com/in/aric-kaji-52743b1b3/) *(Add your LinkedIn link)*
+  [GitHub](https://github.com/Arickaji) | [LinkedIn](https://www.linkedin.com/in/aric-kaji-52743b1b3/) 
 
 ---
 
